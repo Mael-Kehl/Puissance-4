@@ -1,6 +1,19 @@
+/**
+* Used to define and manipulate a board for the game
+* @author Mael Kehl
+* @see Case.java
+* @see Game.java
+*/
 public class Table{
+  /**
+  * bidimentionnal table (board) that contains Cases
+  */
   public Case[][] array;
 
+/**
+* Constructs a bidimentionnal array containing cases containing the string we put in parameter
+* @param name have the form "color"+"."
+*/
   public Table(String name){ // Constructeur
     this.array = new Case[6][7];
     for(int i=0; i<array.length; ++i)
@@ -8,6 +21,9 @@ public class Table{
         this.array[i][j]= new Case(name);
   }
 
+  /**
+  * allows you to print the board with a cool display
+  */
   public void printTable(){ //Affichage de la Table
     System.out.println(" 1 2 3 4 5 6 7");
     for(int i=0; i<array.length; ++i)
@@ -20,10 +36,17 @@ public class Table{
     System.out.println();
   }
 
+  /**
+  * Setter of a case that needs the x and y coordinates of it and what it will contain
+  */
   public void setCase(int i, int j, String name){
     array[i][j].setName(name); //On se trouve dans un tableau de cases
   }
 
+  /**
+  * checks if there are 4 pieces of the same color in every column of the board
+  * @return a boolean
+  */
   public boolean colTest(){
     for(int i=0; i<array.length; i++){
       //premierement on vérifie que la case n'est pas vide
@@ -47,6 +70,10 @@ public class Table{
     return false;
   }
 
+  /**
+  * checks if there are 4 pieces of the same color in every ligne of the board
+  * @return a boolean
+  */
   public boolean ligneTest(){
     for(int y=0;y<array.length;++y){
       //On vérifie que la case du milieu n'est pas vide
@@ -74,6 +101,10 @@ public class Table{
     return false;
   }
 
+  /**
+  * checks if there are 4 pieces of the same color in every diagonal of the board
+  * @return a boolean
+  */
   public boolean diagTest(){
     //Test obliques montantes partant de la colonne 4 (3 en indice)
     for(int i=3;i<array.length;i++){

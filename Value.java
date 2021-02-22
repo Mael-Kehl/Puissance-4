@@ -9,6 +9,7 @@ import java.util.InputMismatchException;
 
 /**
 * Used to recover a user input and to verify if the value is correct
+* @author Mael Kehl
 * @see Game.java
 */
 public class Value{

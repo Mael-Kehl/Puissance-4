@@ -1,13 +1,35 @@
+/**
+* Used to control all the game's process
+* @author Maël Kehl
+* @see Table.java
+* @see Main.java
+*/
 public class Game{
+  /**
+  * Variable that contains a bidimentionnal array defined in Table.java
+  */
   public Table grille;
+  /**
+  * Used to stop the game if someone wins
+  */
   private boolean win=false;
+  /**
+  * Used to count the number of game turns
+  */
   private int count=0;
 
+  /**
+  * Creates a bidimentionnal array using Table.java
+  * @param name will be put in every case of the array
+  */
   public Game(String name){
     this.grille = new Table(name);
-
   }
 
+  /**
+  * Used to place a coin (O in yellow or red) in a column
+  * @param y corresponds to the column number
+  */
   public void setCasePlayer(int y){
     for(int i=grille.array.length-1; i>=0; i--)//Il y a 6 cases dans le tableau, mais il va de 0 à 5
       if(grille.array[i][y].getName() == ".")
@@ -21,11 +43,17 @@ public class Game{
         }
       }
   }
+  /**
+  * Checks if a number given is between 0 and 6
+  * @param y number to check
+  */
   public boolean Verif(int y){
     return(y>=0&&y<=6);
   }
 
-
+  /**
+  * Contains all the game process with Value recover, Test etc.
+  */
   public void game(){
     System.out.print("\033[H\033[2J"); //Clear
     while(count!=42&&win!=true){
