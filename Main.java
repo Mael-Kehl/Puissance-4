@@ -1,7 +1,10 @@
 /**
 * Used to play the game
 * @author Maël Kehl
-* @see Game.java Case.java Table.java Value.java
+* @see Game
+* @see Case
+* @see Table
+* @see Value
 */
 public class Main{
 

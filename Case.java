@@ -1,31 +1,31 @@
 /**
-* class that Contains a String, will be used in Table.java as an element of a board
+* Represents a case of the board
 * @author Maël Kehl
-* @see Table.java
+* @see Table
 */
 public class Case{
   /**
-  * Variable name contains a string of characters
+  * In a case
   */
   private String name;
 
   /**
-  * Allows you to create a case that contains the name you put in parameters
-  * @param name will have the form "color"+"O"
+  * Creates a case conatining name
+  * @param name Has the form "color"+"O"
   */
   public Case(String name){ //Constructeur
     this.name = name;
   }
 
   /**
-  * Getter that returns the String contained in class case
-  * @return return the variable name contained in class case
+  * Returns name of the Case
+  * @return name
   */
   public String getName(){
     return this.name;
   }
   /**
-  * Setter that takes a String in parameter
+  * Changes name
   * @param name will have the form "color"+"O"
   */
   public void setName(String name){

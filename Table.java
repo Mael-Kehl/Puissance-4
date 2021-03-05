@@ -1,28 +1,27 @@
 /**
 * Used to define and manipulate a board for the game
 * @author Mael Kehl
-* @see Case.java
-* @see Game.java
+* @see Case
+* @see Game
 */
 public class Table{
   /**
   * bidimentionnal table (board) that contains Cases
   */
-  public Case[][] array;
+  public Case[][] array = new Case[6][7];
 
 /**
-* Constructs a bidimentionnal array containing cases containing the string we put in parameter
+* Constructs bidimentionnal array starting with name
 * @param name have the form "color"+"."
 */
   public Table(String name){ // Constructeur
-    this.array = new Case[6][7];
     for(int i=0; i<array.length; ++i)
       for(int j=0; j<array[0].length; ++j)
-        this.array[i][j]= new Case(name);
+        this.array[i][j] = new Case(name);
   }
 
   /**
-  * allows you to print the board with a cool display
+  * Displays the board
   */
   public void printTable(){ //Affichage de la Table
     System.out.println(" 1 2 3 4 5 6 7");
@@ -37,7 +36,7 @@ public class Table{
   }
 
   /**
-  * Setter of a case that needs the x and y coordinates of it and what it will contain
+  * Setter of a case of x,y coordinates
   */
   public void setCase(int i, int j, String name){
     array[i][j].setName(name); //On se trouve dans un tableau de cases

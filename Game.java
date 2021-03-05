@@ -1,12 +1,12 @@
 /**
 * Used to control all the game's process
 * @author Maël Kehl
-* @see Table.java
-* @see Main.java
+* @see Table
+* @see Main
 */
 public class Game{
   /**
-  * Variable that contains a bidimentionnal array defined in Table.java
+  * Board
   */
   public Table grille;
   /**
@@ -19,16 +19,16 @@ public class Game{
   private int count=0;
 
   /**
-  * Creates a bidimentionnal array using Table.java
-  * @param name will be put in every case of the array
+  * Constructs a gameset (board)
+  * @param name in every case of the board
   */
   public Game(String name){
     this.grille = new Table(name);
   }
 
   /**
-  * Used to place a coin (O in yellow or red) in a column
-  * @param y corresponds to the column number
+  * Places a coin (O in yellow or red) in a column
+  * @param y column numbers
   */
   public void setCasePlayer(int y){
     for(int i=grille.array.length-1; i>=0; i--)//Il y a 6 cases dans le tableau, mais il va de 0 à 5
@@ -44,7 +44,7 @@ public class Game{
       }
   }
   /**
-  * Checks if a number given is between 0 and 6
+  * Checks if parameter is between 0 and 6
   * @param y number to check
   */
   public boolean Verif(int y){
@@ -52,7 +52,7 @@ public class Game{
   }
 
   /**
-  * Contains all the game process with Value recover, Test etc.
+  * All game's process with Value recover, Test etc.
   */
   public void game(){
     System.out.print("\033[H\033[2J"); //Clear

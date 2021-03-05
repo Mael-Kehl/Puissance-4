@@ -1,27 +1,22 @@
-/**
-* Used to recover an input
-*/
+
 import java.util.Scanner;
-/**
-* Used to check for values errors
-*/
 import java.util.InputMismatchException;
 
 /**
-* Used to recover a user input and to verify if the value is correct
+* Used to recover user's input and to verify if the value is correct
 * @author Mael Kehl
-* @see Game.java
+* @see Game
 */
 public class Value{
   /**
-  * Variable of that will allow us to recover a value
+  * input
   */
   private static Scanner entry = new Scanner(System.in);
 
   /**
-  * Allows us to recover a value, to check if it is an integer and if it isn't to print an erro message and ask user to retry
-  * @param ask is a String but we expect it to be an integer
-  * @return the value entered if it was an integer
+  * Recovers a value with Errors management
+  * @param ask Choice instruction
+  * @return y only if it is an integer
   */
   public static int Recup(String ask){
     int y;
